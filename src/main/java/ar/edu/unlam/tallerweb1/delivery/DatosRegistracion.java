@@ -22,4 +22,32 @@ public class DatosRegistracion {
     public DatosRegistracion() {
 
     }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
 }
