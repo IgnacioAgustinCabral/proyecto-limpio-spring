@@ -42,7 +42,7 @@ public class ControladorRegistroTest {
     }
     @Test
     public void queAlRegistrarmeExitosamenteMeLleveALaVistaLogin(){
-        dadoQueNoExisteUnUsuario(this.datosRegistracion,true);
+        dadoQueNoExisteUnUsuario(this.datosRegistracion,false);
         ModelAndView mav = cuandoMeRegistro();
         entoncesMeLlevaALaVistaDeLogin(mav);
     }
