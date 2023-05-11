@@ -19,7 +19,7 @@ public class ControladorRegistro {
     public ModelAndView irARegistro() {
         ModelMap model = new ModelMap();
         model.put("datosRegistro",new DatosRegistracion());
-        return new ModelAndView("usuario-registro",model);
+        return new ModelAndView("registro-usuario",model);
     }
 
     public ModelAndView registrar(DatosRegistracion datosRegistracion) {
@@ -30,7 +30,7 @@ public class ControladorRegistro {
             vista="login";
         } else {
             model.put("msg","Error al registrarse, intente nuevamente");
-            vista="usuario-registro";
+            vista="registro-usuario";
         }
         return new ModelAndView(vista,model);
     }

@@ -14,6 +14,7 @@ import static org.mockito.Mockito.when;
 public class ControladorRegistroTest {
 
     private static final String CORREO = "jaimito@gmail.com";
+    private static final String CORREO_INCORRECTO = "jaimito@gmail";
     private static final String CLAVE = "asd123";
     private static final String USUARIO = "jaimito99";
     private static final String NOMBRE = "Jaimito";
@@ -23,10 +24,12 @@ public class ControladorRegistroTest {
     private DatosRegistracion datosRegistracion;
     private ControladorRegistro controladorRegistro;
     private ServicioRegistro servicioRegistro;
+    private DatosRegistracion datosRegistracionIncorrectos;
 
     @Before
     public void init() {
         this.datosRegistracion = new DatosRegistracion(USUARIO, CORREO, CLAVE, NOMBRE, APELLIDO, TELEFONO, UBICACION);
+        this.datosRegistracionIncorrectos = new DatosRegistracion(USUARIO, CORREO_INCORRECTO, CLAVE, NOMBRE, APELLIDO, TELEFONO, UBICACION);
         this.servicioRegistro = mock(ServicioRegistroImpl.class);
         this.controladorRegistro = new ControladorRegistro(this.servicioRegistro);
     }
@@ -44,6 +47,13 @@ public class ControladorRegistroTest {
         entoncesMeLlevaALaVistaDeLogin(mav);
     }
 
+    @Test
+    public void queAlRegistrarmeFallidamentePorMailIncorrectoMeDevuelvaALaVistaDeRegistro(){
+        dadoQueNoExisteUnUsuario(this.datosRegistracion,false);
+        ModelAndView mav = cuandoMeRegistro();
+        entoncesMeLlevaALaVistaDeRegistro(mav);
+    }
+
     private void entoncesMeLlevaALaVistaDeLogin(ModelAndView mav) {
         assertThat(mav.getViewName()).isEqualTo("login");
     }
@@ -57,7 +67,7 @@ public class ControladorRegistroTest {
     }
 
     private void entoncesMeLlevaALaVistaDeRegistro(ModelAndView mav) {
-        assertThat(mav.getViewName()).isEqualTo("usuario-registro");
+        assertThat(mav.getViewName()).isEqualTo("registro-usuario");
     }
 
     private ModelAndView cuandoMeQuieroRegistrar() {
