@@ -28,7 +28,7 @@ public class LibroPersistenciaTest extends SpringTest {
     }
 
     private void entoncesSuIdNoEsNulo(Long id) {
-        assertThat(id).isNull();
+        assertThat(id).isNotNull();
     }
 
     private Long cuandoGuardoUnLibro(Libro libro) {
