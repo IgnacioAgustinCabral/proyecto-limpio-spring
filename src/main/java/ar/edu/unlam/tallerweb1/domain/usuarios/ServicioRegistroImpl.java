@@ -9,4 +9,9 @@ public class ServicioRegistroImpl implements ServicioRegistro {
     public Boolean correoValido(String correo) {
         return correo.endsWith(".com") && correo.contains("@");
     }
+
+    @Override
+    public Boolean nroCaracteresUsername(String usuario) {
+        return usuario.length() <= 10;
+    }
 }
