@@ -1,4 +1,4 @@
-package ar.edu.unlam.tallerweb1.domain;
+package ar.edu.unlam.tallerweb1.domain.libros;
 
 import javax.persistence.*;
 
