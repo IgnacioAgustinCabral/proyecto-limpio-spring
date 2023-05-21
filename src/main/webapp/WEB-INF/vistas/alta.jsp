@@ -11,7 +11,7 @@
 <body>
 <div class = "container">
     <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <form:form action="/mi-coleccion/agregar" method="POST" modelAttribute="datosLibro">
+        <form:form action="agregar" method="POST" modelAttribute="datosLibro">
             <h3 class="form-signin-heading text-center">Agregue un libro</h3>
             <hr class="colorgraph"><br>
 
@@ -19,7 +19,7 @@
             <form:input path="nombre" type="text" id="nombre" class="form-control" />
             <label for="autor">Ingrese nombre del autor:</label>
             <form:input path="autor" type="text" id="autor" class="form-control"/>
-            <label for="ISBN">Ingrese ISBN:</label>
+            <label for="ISBN">Ingrese ISBN sin guiones (-):</label>
             <form:input path="ISBN" type="text" id="ISBN" class="form-control"/>
             <label for="idioma">Ingrese idioma del libro:</label>
             <form:input path="idioma" type="text" id="idioma" class="form-control"/>

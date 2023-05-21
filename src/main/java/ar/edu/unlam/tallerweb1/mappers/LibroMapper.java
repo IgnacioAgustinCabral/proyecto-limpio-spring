@@ -1,4 +1,4 @@
-package ar.edu.unlam.tallerweb1.mapper;
+package ar.edu.unlam.tallerweb1.mappers;
 
 import ar.edu.unlam.tallerweb1.delivery.DatosLibro;
 import ar.edu.unlam.tallerweb1.domain.libros.Libro;
