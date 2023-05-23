@@ -9,15 +9,10 @@ public class Libro {
     private Long id;
     private String nombre;
     private String autor;
-    @Column(unique=true)
     private String ISBN;
     private String idioma;
     private String editorial;
     private String estado;
-
-    public Libro() {
-
-    }
 
     public void setId(Long id) {
         this.id = id;
@@ -73,5 +68,18 @@ public class Libro {
 
     public String getEstado() {
         return estado;
+    }
+
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", autor='" + autor + '\'' +
+                ", ISBN='" + ISBN + '\'' +
+                ", idioma='" + idioma + '\'' +
+                ", editorial='" + editorial + '\'' +
+                ", estado='" + estado + '\'' +
+                '}';
     }
 }

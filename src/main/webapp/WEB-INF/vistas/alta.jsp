@@ -33,7 +33,7 @@
             </form:select>
 
 
-            <button class="btn btn-lg btn-primary btn-block" Type="Submit"/>Agregar Libro</button>
+            <button class="btn btn-lg btn-primary btn-block" Type="submit"/>Agregar Libro</button>
         </form:form>
         <%--Bloque que es visible si el elemento error no esta vacio	--%>
         <c:if test="${not empty error}">
