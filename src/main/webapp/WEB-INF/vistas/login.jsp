@@ -23,10 +23,10 @@
 					<hr class="colorgraph"><br>
 
 					<%--Elementos de entrada de datos, el elemento path debe indicar en que atributo del objeto usuario se guardan los datos ingresados--%>
-					<form:input path="email" id="email" type="email" class="form-control" />
-					<form:input path="password" type="password" id="password" class="form-control"/>     		  
+					<form:input path="email" id="email" type="email" class="form-control" placeholder="Ingrese email"/>
+					<form:input path="password" type="password" id="password" class="form-control" placeholder="Ingrese contrasenia"/>
 					
-					<button class="btn btn-lg btn-primary btn-block" Type="Submit"/>Login</button>
+					<button class="btn btn-lg btn-primary btn-block" Type="submit"/>Login</button>
 				</form:form>
 				<a href="registrar-usuario"	>Registrarme</a>
 				<%--Bloque que es visible si el elemento error no esta vacio	--%>

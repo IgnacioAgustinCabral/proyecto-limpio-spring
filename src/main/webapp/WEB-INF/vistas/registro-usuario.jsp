@@ -25,6 +25,9 @@
 
                 <label for="clave">Contrase&ntilde;a</label>
                 <form:input path="clave" type="password" id="clave" class="form-control"/>
+
+                <label for="clave">Contrase&ntilde;a</label>
+                <form:input path="clave_rep" type="password" id="clave" class="form-control"/>
             </div>
 
             <div>
@@ -43,13 +46,14 @@
                 <form:input path="ubicacion" type="text" id="ubicacion" class="form-control"/>
             </div>
 
-            <button id="btn-registrarme" class="btn btn-lg btn-primary btn-block" Type="Submit"/>Registrarme</button>
+            <button id="btn-registrarme" class="btn btn-lg btn-primary btn-block" Type="submit"/>Registrarme</button>
         </form:form>
 
         <c:if test="${not empty error}">
-            <h4><span>${error}</span></h4>
+            <h4><span style="color:red">${error}</span></h4>
             <br>
         </c:if>
+        ${msg}
     </div>
 </div>
 

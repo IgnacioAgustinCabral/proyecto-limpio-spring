@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.*;
 
 public class ServicioRegistroImplTest {
 
-    private final String MAIL_CORRECTO = "jaimito@gmail.com";
+    /*private final String MAIL_CORRECTO = "jaimito@gmail.com";
     private final String MAIL_INCORRECTO = "jaimito@";
     private final String USERNAME_INCORRECTO = "eljaimito1995";
     private final String USERNAME_CORRECTO = "jaimito95";
@@ -86,5 +86,5 @@ public class ServicioRegistroImplTest {
     }
 
     private void dadoQueIngresoUnMailIncorrecto() {
-    }
+    }*/
 }

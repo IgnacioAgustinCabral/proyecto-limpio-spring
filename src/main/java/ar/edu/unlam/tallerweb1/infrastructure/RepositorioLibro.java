@@ -1,6 +1,6 @@
 package ar.edu.unlam.tallerweb1.infrastructure;
 
-import ar.edu.unlam.tallerweb1.domain.Libro;
+import ar.edu.unlam.tallerweb1.domain.libros.Libro;
 
 public interface RepositorioLibro {
 
