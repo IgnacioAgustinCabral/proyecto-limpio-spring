@@ -35,19 +35,15 @@ public class ControladorLibro {
     @RequestMapping(path = "/agregar",method = RequestMethod.POST)
     public ModelAndView agregar(@ModelAttribute("datosLibro") DatosLibro datosLibro) {
         //mapeo de DTO a Entidad
-        System.out.println(datosLibro);
         Libro libro = LibroMapper.INSTANCE.datosLibroToLibro(datosLibro);
-        System.out.println(libro+"AAAAAAAAAAAAAAAAAAAAAAAA");
         ModelMap model = new ModelMap();
         String vista = "";
         if(this.servicioLibro.verificarISBN(libro.getISBN())){
-            System.out.println("ACA IF");
             model.put("msg","Exito al agregar libro");
             vista = "alta";
             this.servicioLibro.agregar(libro);
         } else {
-            System.out.println("ACA else");
-            model.put("msg","Fallo al agregar libro, intentelo nuevamente");
+            model.put("error","Fallo al agregar libro, intentelo nuevamente");
             vista = "alta";
         }
         return new ModelAndView(vista,model);
