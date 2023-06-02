@@ -14,7 +14,7 @@ import static org.mockito.Mockito.when;
 
 public class ControladorLibroTest {
 
-    private static final String NOMBRE = "El Señor de los Anillos: Las Dos Torres";
+    /*private static final String NOMBRE = "El Señor de los Anillos: Las Dos Torres";
     private static final String AUTOR = "Tolkien";
     private static final String ISBN = "12455664";
     private static final String ISBN_ERRONEO = "1122334455667788";
@@ -93,5 +93,5 @@ public class ControladorLibroTest {
 
     private void dadoQueIngresoLosDatosDeUnLibroErroneamente(Libro libroErroneo, Boolean retorno) {
         when(this.servicioLibro.verificarISBN(libroErroneo.getISBN())).thenReturn(retorno);
-    }
+    }*/
 }

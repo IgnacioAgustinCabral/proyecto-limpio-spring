@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class ControladorLibro {
     private ServicioLibro servicioLibro;
@@ -26,7 +29,10 @@ public class ControladorLibro {
 //    }
 
     @RequestMapping(path = "/alta",method = RequestMethod.GET)
-    public ModelAndView irAVistaAlta() {
+    public ModelAndView irAVistaAlta(HttpServletRequest request) {
+        /*HttpSession session = request.getSession();
+        System.out.println(session.getAttribute("id"));
+        System.out.println("AAAAAAAAA");*/
         ModelMap model = new ModelMap();
         model.put("datosLibro",new DatosLibro());
         return new ModelAndView("alta",model);

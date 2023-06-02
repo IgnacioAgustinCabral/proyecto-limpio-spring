@@ -1,5 +1,8 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+	String msg = request.getParameter("msg");
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -34,7 +37,14 @@
 			        <h4><span>${error}</span></h4>
 			        <br>
 		        </c:if>
-				${msg}
+				<%
+					if (msg != null) {
+				%>
+				<h4><span style="color: green"><%= msg %></span></h4>
+				<br>
+				<%
+					}
+				%>
 			</div>
 		</div>
 		

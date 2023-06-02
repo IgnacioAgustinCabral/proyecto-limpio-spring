@@ -36,12 +36,10 @@ public class ControladorRegistro {
         ModelMap model = new ModelMap();
         String vista = "";
         if (this.servicioRegistro.correoValido(datosRegistracion.getCorreo()) && this.servicioRegistro.nroCaracteresUsername(datosRegistracion.getUsuario()) && this.servicioRegistro.passwordIguales(datosRegistracion.getClave(), datosRegistracion.getClave_rep())) {
-            System.out.println("IF");
-            model.put("msg", "Registrado exitosamente");
+            model.put("msg", "Registrado exitosamente!");
             vista = "redirect:/login";
             this.servicioRegistro.guardarUsuario(usuario);
         } else {
-            System.out.println("ELSE");
             model.put("error", "Error al registrarse, intente nuevamente");
             vista = "registro-usuario";
         }

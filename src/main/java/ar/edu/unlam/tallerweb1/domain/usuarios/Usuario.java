@@ -1,9 +1,13 @@
 package ar.edu.unlam.tallerweb1.domain.usuarios;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import ar.edu.unlam.tallerweb1.domain.LibrosUsuarios;
+import ar.edu.unlam.tallerweb1.domain.libros.Libro;
+
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 // Clase que modela el concepto de Usuario, la anotacion @Entity le avisa a hibernate que esta clase es persistible
 // el paquete ar.edu.unlam.tallerweb1.modelo esta indicado en el archivo hibernateCOntext.xml para que hibernate
@@ -24,6 +28,9 @@ public class Usuario {
 	private String apellido;
 	private String telefono;
 	private String ubicacion;
+
+	@OneToMany(mappedBy = "usuario")
+	private List<LibrosUsuarios> libros = new LinkedList<>();
 //	private Boolean activo = false;
 
 	public Long getId() {
@@ -88,6 +95,14 @@ public class Usuario {
 
 	public void setUbicacion(String ubicacion) {
 		this.ubicacion = ubicacion;
+	}
+
+	public List<LibrosUsuarios> getLibros() {
+		return libros;
+	}
+
+	public void setLibros(List<LibrosUsuarios> libros) {
+		this.libros = libros;
 	}
 
 	@Override

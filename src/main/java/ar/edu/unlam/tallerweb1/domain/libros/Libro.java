@@ -1,6 +1,13 @@
 package ar.edu.unlam.tallerweb1.domain.libros;
 
+import ar.edu.unlam.tallerweb1.domain.LibrosUsuarios;
+import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Libro {
@@ -13,6 +20,9 @@ public class Libro {
     private String idioma;
     private String editorial;
     private String estado;
+
+    @OneToMany(mappedBy = "libro")
+    private List<LibrosUsuarios> usuarios = new LinkedList<>();
 
     public void setId(Long id) {
         this.id = id;
@@ -68,6 +78,14 @@ public class Libro {
 
     public String getEstado() {
         return estado;
+    }
+
+    public List<LibrosUsuarios> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(List<LibrosUsuarios> usuarios) {
+        this.usuarios = usuarios;
     }
 
     @Override
