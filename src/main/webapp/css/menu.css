@@ -43,3 +43,15 @@
 .marginpage {
    border: 2px solid #204d74;
 }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
