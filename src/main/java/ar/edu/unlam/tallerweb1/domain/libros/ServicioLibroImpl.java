@@ -8,7 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service
+@Service("servicioLibro")
+@Transactional
 public class ServicioLibroImpl implements ServicioLibro{
     private RepositorioLibro repositorioLibro;
 

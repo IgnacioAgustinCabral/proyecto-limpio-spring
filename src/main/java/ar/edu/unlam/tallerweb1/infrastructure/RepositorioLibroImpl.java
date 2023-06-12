@@ -8,6 +8,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
@@ -55,13 +56,17 @@ public class RepositorioLibroImpl implements RepositorioLibro {
 
     @Override
     public List<Libro> obtenerLibros() {
+        /*
         try {
             final Session session = sessionFactory.getCurrentSession();
             return session.createCriteria(Libro.class).list();
         } catch (HibernateException e) {
             final Session  session = sessionFactory.openSession();
             return session.createCriteria(Libro.class).list();
-        }
+        }*/
+
+        final Session session = sessionFactory.getCurrentSession();
+        return session.createCriteria(Libro.class).list();
     }
 
 
