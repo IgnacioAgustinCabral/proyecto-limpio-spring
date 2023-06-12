@@ -1,5 +1,7 @@
 package ar.edu.unlam.tallerweb1.delivery;
 
+import ar.edu.unlam.tallerweb1.domain.libros.Libro;
+import ar.edu.unlam.tallerweb1.domain.libros.ServicioLibro;
 import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
 import ar.edu.unlam.tallerweb1.domain.usuarios.ServicioLogin;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 public class ControladorLogin {
@@ -21,10 +24,12 @@ public class ControladorLogin {
 	// dicha clase debe estar anotada como @Service o @Repository y debe estar en un paquete de los indicados en
 	// applicationContext.xml
 	private ServicioLogin servicioLogin;
+	private ServicioLibro servicioLibro;
 
 	@Autowired
-	public ControladorLogin(ServicioLogin servicioLogin){
+	public ControladorLogin(ServicioLogin servicioLogin, ServicioLibro servicioLibro){
 		this.servicioLogin = servicioLogin;
+		this.servicioLibro = servicioLibro;
 	}
 
 	// Este metodo escucha la URL localhost:8080/NOMBRE_APP/login si la misma es invocada por metodo http GET
@@ -63,7 +68,12 @@ public class ControladorLogin {
 	// Escucha la URL /home por GET, y redirige a una vista.
 	@RequestMapping(path = "/home", method = RequestMethod.GET)
 	public ModelAndView irAHome() {
-		return new ModelAndView("home");
+		ModelMap model = new ModelMap();
+
+		List<Libro> libros = servicioLibro.obtenerLibros();
+		model.put("libros", libros);
+
+		return new ModelAndView("home", model);
 	}
 
 	// Escucha la url /, y redirige a la URL /login, es lo mismo que si se invoca la url /login directamente.

@@ -2,6 +2,8 @@ package ar.edu.unlam.tallerweb1.infrastructure;
 
 import ar.edu.unlam.tallerweb1.domain.libros.Libro;
 
+import java.util.List;
+
 public interface RepositorioLibro {
 
     void guardar(Libro libro);
@@ -13,4 +15,8 @@ public interface RepositorioLibro {
     void borrar(Libro libro);
 
     void modificar(Libro libro);
+
+    List<Libro> obtenerLibrosPorUsuario(String Usuario);
+
+    List<Libro> obtenerLibros();
 }
