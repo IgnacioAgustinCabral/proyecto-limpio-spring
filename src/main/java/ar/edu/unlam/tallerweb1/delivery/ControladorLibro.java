@@ -48,4 +48,11 @@ public class ControladorLibro {
         }
         return new ModelAndView(vista,model);
     }
+    @RequestMapping(path = "/listarLibros", method = RequestMethod.GET)
+    public ModelAndView irARegistrarReserva() {
+        ModelMap modelo = new ModelMap();
+        ModelAndView nav= new ModelAndView("libros", modelo);
+
+        return nav;
+    }
 }

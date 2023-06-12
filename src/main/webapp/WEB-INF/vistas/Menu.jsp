@@ -13,7 +13,7 @@
                 <img src="imgs/LogoWebPage.png" alt="Swapmeet Things">
             </div>
             <ul class="nav">
-                <li><a href="alta">Mi Coleccion</a></li>
+                <li><a href="listarLibros">Mi Coleccion</a></li>
                 <li><a href="#">Intercambios</a></li>
                 <li><a href="#">Reportes</a></li>
                 <li><a href="#">Notificaciones</a></li>
