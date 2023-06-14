@@ -45,7 +45,7 @@
 
     <!-- Top header -->
     <header class="w3-black w3-container w3-xlarge">
-        <p class="w3-left w3-text-white">Jeans</p>
+        <p class="w3-left w3-text-white">User</p>
         <p class="w3-right w3-text-white">
             <i class="fa fa-shopping-cart w3-margin-right"></i>
             <i class="fa fa-search"></i>

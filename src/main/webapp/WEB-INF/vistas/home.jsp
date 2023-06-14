@@ -6,9 +6,9 @@
 	<!-- Contenido principal -->
 <!--cuerpo de la pagina-->
 <div class="w3-row" style="margin-left:250px" >
-	<div class="w3-col l3 s6">
         <c:forEach items="${libros}" var="libro">
-			<div class="w3-container w3-card">
+			<div class="w3-col l3 s6 w3-margin-left">
+			<div class="w3-container w3-card ">
 			<img src="imgs/LogoWebPage.png" style="width:100%">
 			<p>${libro.ISBN}<br></p>
 			<p>${libro.autor}<br></p>
@@ -16,6 +16,6 @@
 			<p>${libro.idioma}<br></p>
 			<p>${libro.nombre}<br></p>
 			</div>
+			</div>
 		</c:forEach>
-	</div>
 <jsp:include page="footer.jsp"/>
