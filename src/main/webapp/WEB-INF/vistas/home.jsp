@@ -4,19 +4,18 @@
 <jsp:include page="header.jsp"/>
 	<jsp:include page="Menu.jsp"/>
 	<!-- Contenido principal -->
-	<div class="col-sm-12 col-md-12 marginpage">
-		<!-- Aquí va el contenido principal de tu página -->
-		<div class="card">
-			<c:forEach items="${libros}" var="libro">
-				<tr class="list-group">
-					<td class="list-group-item">${libro.ISBN}</td>
-					<td class="list-group-item">${libro.autor}</td>
-					<td class="list-group-item">${libro.editorial}</td>
-					<td class="list-group-item">${libro.idioma}</td>
-					<td class="list-group-item">${libro.nombre}</td>
-				</tr>
-			</c:forEach>
-		</div>
-
+<!--cuerpo de la pagina-->
+<div class="w3-row" style="margin-left:250px" >
+	<div class="w3-col l3 s6">
+        <c:forEach items="${libros}" var="libro">
+			<div class="w3-container w3-card">
+			<img src="imgs/LogoWebPage.png" style="width:100%">
+			<p>${libro.ISBN}<br></p>
+			<p>${libro.autor}<br></p>
+			<p>${libro.editorial}<br></p>
+			<p>${libro.idioma}<br></p>
+			<p>${libro.nombre}<br></p>
+			</div>
+		</c:forEach>
 	</div>
 <jsp:include page="footer.jsp"/>
